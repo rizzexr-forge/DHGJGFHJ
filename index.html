@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop — Магазин зоотоваров</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">
+                <span class="logo__icon">🐾</span>
+                <span class="logo__text">Pet<em>Shop</em></span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#catalog" class="nav__link">Каталог</a>
+                <a href="#popular" class="nav__link">Популярное</a>
+                <a href="#about" class="nav__link">О нас</a>
+                <a href="#delivery" class="nav__link">Доставка</a>
+                <a href="#contacts" class="nav__link">Контакты</a>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon search-toggle" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+                <button class="btn-icon cart-toggle" id="cartToggle" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="btn-icon burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Search overlay -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="container">
+                <div class="search-bar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" placeholder="Поиск товаров..." autocomplete="off">
+                    <button class="search-close" id="searchClose">&times;</button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero__bg">
+            <div class="hero__shapes">
+                <div class="shape shape--1"></div>
+                <div class="shape shape--2"></div>
+                <div class="shape shape--3"></div>
+            </div>
+        </div>
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <span class="hero__badge">Бесплатная доставка от 2000 ₽</span>
+                <h1 class="hero__title">Всё для вашего <span class="text-gradient">любимца</span></h1>
+                <p class="hero__subtitle">Корма, игрушки, аксессуары и уход — более 5000 товаров для собак, кошек, птиц и грызунов с доставкой по всей России</p>
+                <div class="hero__buttons">
+                    <a href="#catalog" class="btn btn--primary btn--lg">Перейти в каталог</a>
+                    <a href="#popular" class="btn btn--outline btn--lg">Хиты продаж</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <strong>5000+</strong><span>товаров</span>
+                    </div>
+                    <div class="hero__stat">
+                        <strong>50 000+</strong><span>клиентов</span>
+                    </div>
+                    <div class="hero__stat">
+                        <strong>4.9</strong><span>рейтинг</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__image-wrapper">
+                    <div class="hero__emoji-float">🐕</div>
+                    <div class="hero__emoji-float hero__emoji-float--2">🐈</div>
+                    <div class="hero__emoji-float hero__emoji-float--3">🦜</div>
+                    <div class="hero__emoji-float hero__emoji-float--4">🐠</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="catalog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Каталог</span>
+                <h2 class="section-title">Категории товаров</h2>
+            </div>
+            <div class="categories__grid" id="categoriesGrid">
+                <!-- JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="popular">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Хиты продаж</span>
+                <h2 class="section-title">Популярные товары</h2>
+            </div>
+            <div class="products__filters" id="productFilters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="dogs">Собаки</button>
+                <button class="filter-btn" data-filter="cats">Кошки</button>
+                <button class="filter-btn" data-filter="birds">Птицы</button>
+                <button class="filter-btn" data-filter="fish">Рыбы</button>
+                <button class="filter-btn" data-filter="rodents">Грызуны</button>
+            </div>
+            <div class="products__grid" id="productsGrid">
+                <!-- JS -->
+            </div>
+            <div class="products__more">
+                <button class="btn btn--outline btn--lg" id="loadMore">Показать ещё</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo">
+        <div class="container">
+            <div class="promo__card">
+                <div class="promo__content">
+                    <span class="promo__badge">Акция -20%</span>
+                    <h2 class="promo__title">Premium корма Royal Canin</h2>
+                    <p class="promo__text">Скидка 20% на все корма премиум-класса до конца месяца</p>
+                    <a href="#catalog" class="btn btn--white">Смотреть товары</a>
+                </div>
+                <div class="promo__visual">🏷️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__content">
+                    <span class="section-tag">О нас</span>
+                    <h2 class="section-title">Почему выбирают PetShop?</h2>
+                    <p class="about__text">Мы работаем с 2018 года и знаем, что нужно вашему питомцу. Наши эксперты подберут корм, игрушку и аксессуары с учётом породы, возраста и предпочтений вашего четвероногого друга.</p>
+                    <div class="about__features">
+                        <div class="feature">
+                            <div class="feature__icon">✅</div>
+                            <div>
+                                <h4>Только оригинальная продукция</h4>
+                                <p>Работаем напрямую с производителями</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">🚚</div>
+                            <div>
+                                <h4>Быстрая доставка</h4>
+                                <p>От 1 дня по Москве, 3 дня по России</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">💬</div>
+                            <div>
+                                <h4>Консультации ветеринара</h4>
+                                <p>Бесплатная консультация при покупке</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">🔄</div>
+                            <div>
+                                <h4>Возврат и обмен</h4>
+                                <p>14 дней на возврат товара</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__visual">
+                    <div class="about__image-grid">
+                        <div class="about__img about__img--1">🐕</div>
+                        <div class="about__img about__img--2">🐈</div>
+                        <div class="about__img about__img--3">🦴</div>
+                        <div class="about__img about__img--4">🧶</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery -->
+    <section class="delivery" id="delivery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Доставка</span>
+                <h2 class="section-title">Как мы доставляем</h2>
+            </div>
+            <div class="delivery__grid">
+                <div class="delivery__step">
+                    <div class="delivery__number">01</div>
+                    <div class="delivery__icon">🛒</div>
+                    <h3>Оформите заказ</h3>
+                    <p>Выберите товары и оформите заказ на сайте за пару минут</p>
+                </div>
+                <div class="delivery__step">
+                    <div class="delivery__number">02</div>
+                    <div class="delivery__icon">📦</div>
+                    <h3>Мы соберём заказ</h3>
+                    <p>Упакуем и подготовим ваш заказ к отправке</p>
+                </div>
+                <div class="delivery__step">
+                    <div class="delivery__number">03</div>
+                    <div class="delivery__icon">🚚</div>
+                    <h3>Доставим быстро</h3>
+                    <p>Курьером по Москве или транспортной компанией по РФ</p>
+                </div>
+                <div class="delivery__step">
+                    <div class="delivery__number">04</div>
+                    <div class="delivery__icon">🎉</div>
+                    <h3>Получите заказ</h3>
+                    <p>Оплатите при получении или онлайн</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Отзывы</span>
+                <h2 class="section-title">Что говорят клиенты</h2>
+            </div>
+            <div class="testimonials__grid">
+                <div class="testimonial">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">Заказываю уже полгода. Корма всегда свежие, сроки отличные. Доставка за день — просто чудо!</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">АК</div>
+                        <div>
+                            <strong>Анна К.</strong>
+                            <span>Владелица лабрадора</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">Консультант помог подобрать корм для кота с аллергией. Очень благодарна за внимание!</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">МС</div>
+                        <div>
+                            <strong>Мария С.</strong>
+                            <span>Владелица мейн-куна</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">Широкий ассортимент, приятные цены и всегда в наличии то, что нужно. Рекомендую!</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar">ДП</div>
+                        <div>
+                            <strong>Дмитрий П.</strong>
+                            <span>Владелец шпица</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts__grid">
+                <div class="contacts__info">
+                    <span class="section-tag">Контакты</span>
+                    <h2 class="section-title">Свяжитесь с нами</h2>
+                    <div class="contacts__items">
+                        <div class="contacts__item">
+                            <div class="contacts__item-icon">📍</div>
+                            <div>
+                                <strong>Адрес</strong>
+                                <p>Москва, ул. Зоологическая, 10</p>
+                            </div>
+                        </div>
+                        <div class="contacts__item">
+                            <div class="contacts__item-icon">📞</div>
+                            <div>
+                                <strong>Телефон</strong>
+                                <p>+7 (800) 555-35-35</p>
+                            </div>
+                        </div>
+                        <div class="contacts__item">
+                            <div class="contacts__item-icon">✉️</div>
+                            <div>
+                                <strong>Email</strong>
+                                <p>info@petshop.ru</p>
+                            </div>
+                        </div>
+                        <div class="contacts__item">
+                            <div class="contacts__item-icon">🕐</div>
+                            <div>
+                                <strong>Режим работы</strong>
+                                <p>Пн-Вс: 9:00 — 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__form-wrapper">
+                    <form class="contacts__form" id="contactForm">
+                        <h3>Напишите нам</h3>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Сообщение" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--lg btn--full">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter__inner">
+                <h2>Подпишитесь на скидки</h2>
+                <p>Получайте персональные предложения и скидки до 30% на электронную почту</p>
+                <form class="newsletter__form" id="newsletterForm">
+                    <input type="email" placeholder="Ваш email" required>
+                    <button type="submit" class="btn btn--primary">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="logo">
+                        <span class="logo__icon">🐾</span>
+                        <span class="logo__text">Pet<em>Shop</em></span>
+                    </a>
+                    <p>Магазин зоотоваров для ваших любимцев. Качественные товары, быстрая доставка, забота о питомцах.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                        <a href="#" aria-label="VK">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.846 2.5 2.27 4.693 2.864 4.693.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.644v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.762-.491h1.744c.525 0 .644.27.525.644-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 1 1-2.882 0 1.441 1.441 0 0 1 2.882 0z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li><a href="#">Для собак</a></li>
+                        <li><a href="#">Для кошек</a></li>
+                        <li><a href="#">Для птиц</a></li>
+                        <li><a href="#">Для рыб</a></li>
+                        <li><a href="#">Для грызунов</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат товара</a></li>
+                        <li><a href="#">Программа лояльности</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li>+7 (800) 555-35-35</li>
+                        <li>info@petshop.ru</li>
+                        <li>Москва, ул. Зоологическая, 10</li>
+                        <li>Пн-Вс: 9:00 — 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 PetShop. Все права защищены.</p>
+                <div class="footer__payments">
+                    <span>💳 Visa</span>
+                    <span>💳 MasterCard</span>
+                    <span>💳 МИР</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h3>Корзина</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-sidebar__items" id="cartItems">
+            <div class="cart-empty">
+                <span class="cart-empty__icon">🛒</span>
+                <p>Корзина пуста</p>
+                <span>Добавьте товары из каталога</span>
+            </div>
+        </div>
+        <div class="cart-sidebar__footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <strong id="cartTotal">0 ₽</strong>
+            </div>
+            <button class="btn btn--primary btn--lg btn--full">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
